@@ -482,7 +482,7 @@ function main() {
   grpc_promise.promisifyAll(client, {metadata: meta});
     
   client.testSimpleSimple()
-    .sendMessage({id: 1})
+    .sendMessage({id: 1}, {anotherMetaKey: stringOrArray})
     .then(res => {
       console.log('Client: Simple Message Received = ', res) // Client: Simple Message Received = {id: 1}
     })
@@ -536,7 +536,7 @@ main();
 
 ## MIT License
 
-Copyright (c) 2017 Carles Sistare
+Copyright (c) 2019 Coozzy AG
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
