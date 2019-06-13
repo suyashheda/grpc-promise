@@ -1,6 +1,6 @@
 {
   "name": "grpc-promise2",
-  "version": "2.3.0",
+  "version": "2.4.0",
   "description": "This is a fork of grpc-promise with extended metadata support. GRPC promisify module for all Request/Response types: standard and stream",
   "main": "lib/index.js",
   "scripts": {
