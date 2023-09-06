@@ -1,6 +1,6 @@
 {
   "name": "grpc-promise2",
-  "version": "2.4.1",
+  "version": "3.0.0",
   "description": "This is a fork of grpc-promise with extended metadata support. GRPC promisify module for all Request/Response types: standard and stream",
   "main": "lib/index.js",
   "scripts": {
@@ -8,19 +8,20 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/marcoEgger/grpc-promise.git"
+    "url": "git+https://github.com/suyashheda/grpc-promise.git"
   },
   "keywords": [
     "grpc-promise",
     "grpc",
+    "grpc-js",
     "metadata",
     "promise",
     "promisify",
     "functional"
   ],
-  "author": "Coozzy AG",
+  "author": "Suyash Heda",
   "license": "MIT",
-  "homepage": "https://github.com/marcoEgger/grpc-promise#readme",
+  "homepage": "https://github.com/suyashheda/grpc-promise#readme",
   "devDependencies": {
     "coveralls": "2.13.0",
     "eslint": "3.19.0",

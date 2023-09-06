@@ -103,7 +103,7 @@ Implementation of `TestSimpleSimple` message
 Server side:
 
 ```js
-const grpc = require('grpc');
+const grpc = require('@grpc/grpc-js');
 const protoLoader = require('@grpc/proto-loader');
 
 const packageDefinition = protoLoader.loadSync(
@@ -141,7 +141,7 @@ main();
 Client side:
 
 ```js
-const grpc = require('grpc');
+const grpc = require('@grpc/grpc-js');
 const protoLoader = require('@grpc/proto-loader');
 const grpc_promise = require('grpc-promise');;
 
@@ -183,7 +183,7 @@ Implementation of `TestStreamSimple` message
 Server side:
 
 ```js
-const grpc = require('grpc');
+const grpc = require('@grpc/grpc-js');
 const protoLoader = require('@grpc/proto-loader');
 
 const packageDefinition = protoLoader.loadSync(
@@ -217,8 +217,11 @@ main = function () {
     testStreamSimple: testStreamSimple
   });
 
-  server.bind('0.0.0.0:50052', grpc.ServerCredentials.createInsecure());
-  server.start();
+  server.bindAsync('0.0.0.0:50052', grpc.ServerCredentials.createInsecure(), (err, success) => {
+    if(!err){
+     server.start();
+    }
+  })
 }
 
 main();
@@ -227,7 +230,7 @@ main();
 Client side:
 
 ```js
-const grpc = require('grpc');
+const grpc = require('@grpc/grpc-js');
 const protoLoader = require('@grpc/proto-loader');
 const grpc_promise = require('grpc-promise');
 
@@ -272,7 +275,7 @@ Implementation of `TestSimpleStream` message
 Server side:
 
 ```js
-const grpc = require('grpc');
+const grpc = require('@grpc/grpc-js');
 const protoLoader = require('@grpc/proto-loader');
 
 const packageDefinition = protoLoader.loadSync(
@@ -302,8 +305,11 @@ main = function () {
     testSimpleStream: testSimpleStream
   });
 
-  server.bind('0.0.0.0:50052', grpc.ServerCredentials.createInsecure());
-  server.start();
+  server.bindAsync('0.0.0.0:50052', grpc.ServerCredentials.createInsecure(), (err, success) => {
+    if(!err){
+     server.start();
+    }
+  })
 }
 
 main();
@@ -312,7 +318,7 @@ main();
 Client side:
 
 ```js
-const grpc = require('grpc');
+const grpc = require('@grpc/grpc-js');
 const protoLoader = require('@grpc/proto-loader');
 const grpc_promise = require('grpc-promise');
 
@@ -357,7 +363,7 @@ the server implementation needs to answer with the same id received
 Server side:
 
 ```js
-const grpc = require('grpc');
+const grpc = require('@grpc/grpc-js');
 const protoLoader = require('@grpc/proto-loader');
 
 const packageDefinition = protoLoader.loadSync(
@@ -395,8 +401,11 @@ main = function () {
     testStreamStream: testStreamStream
   });
 
-  server.bind('0.0.0.0:50052', grpc.ServerCredentials.createInsecure());
-  server.start();
+  server.bindAsync('0.0.0.0:50052', grpc.ServerCredentials.createInsecure(), (err, success) => {
+    if(!err){
+     server.start();
+    }
+  })
 }
 
 main();
@@ -405,7 +414,7 @@ main();
 Client side:
 
 ```js
-const grpc = require('grpc');
+const grpc = require('@grpc/grpc-js');
 const protoLoader = require('@grpc/proto-loader');
 const grpc_promise = require('grpc-promise');
 
@@ -455,7 +464,7 @@ main();
 Client side:
 
 ```js
-const grpc = require('grpc');
+const grpc = require('@grpc/grpc-js');
 const protoLoader = require('@grpc/proto-loader');
 const grpc_promise = require('grpc-promise');
 
@@ -510,7 +519,7 @@ grpc_promise.promisifyAll(client, { timeout: 1000 });
 Client side:
 
 ```js
-const grpc = require('grpc');
+const grpc = require('@grpc/grpc-js');
 const grpc_promise = require('grpc-promise');
 const test_proto = grpc.load(__dirname + '/protobuf/test.proto').test;
 
